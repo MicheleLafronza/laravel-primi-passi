@@ -11,15 +11,16 @@
 
     <div class="container my-5">
 
-        <h1 class="text-center">Hello World!</h1>
+        <h1 class="text-center">{{ $title }}</h1>
 
-        {{-- @if ($print)
-            <ul></ul>
-            @foreach ($tennis_players as $player)
-                
-            @endforeach
-            
-        @endif --}}
+        @if ($print)
+            <ul class="list-group text-center my-5">
+                @foreach ($tennis_players as $player)
+                    <li class="list-group-item">Nome: {{ $player['nome'] }} || Cognome: {{ $player['cognome'] }} || Nazionalità: {{ $player['nazionalità'] }} || Età: {{ $player['età'] }}</li>
+                @endforeach
+            </ul>
+        @else <h2 class="text-center">Nessun giocatore in lista.</h2>
+        @endif
 
     </div>
     

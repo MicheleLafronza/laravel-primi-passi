@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+    $title = 'Lista Tennisti';
+
     $tennis_players = [
         [
             'nome' => 'Novak',
@@ -50,5 +52,5 @@ Route::get('/', function () {
 
     $print = true;
 
-    return view('home', compact('tennis_players'));
+    return view('home', compact('title', 'tennis_players', 'print'));
 });
