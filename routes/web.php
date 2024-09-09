@@ -14,5 +14,41 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $tennis_players = [
+        [
+            'nome' => 'Novak',
+            'cognome' => 'Djokovic',
+            'nazionalità' => 'Serba',
+            'età' => 36
+        ],
+        [
+            'nome' => 'Rafael',
+            'cognome' => 'Nadal',
+            'nazionalità' => 'Spagnola',
+            'età' => 38
+        ],
+        [
+            'nome' => 'Roger',
+            'cognome' => 'Federer',
+            'nazionalità' => 'Svizzera',
+            'età' => 42
+        ],
+        [
+            'nome' => 'Jannik',
+            'cognome' => 'Sinner',
+            'nazionalità' => 'Italiana',
+            'età' => 22
+        ],
+        [
+            'nome' => 'Daniil',
+            'cognome' => 'Medvedev',
+            'nazionalità' => 'Russa',
+            'età' => 28
+        ]
+    ];
+
+    $print = true;
+
+    return view('home', compact('tennis_players'));
 });
