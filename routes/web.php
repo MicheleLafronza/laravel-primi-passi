@@ -52,5 +52,34 @@ Route::get('/', function () {
 
     $print = true;
 
-    return view('home', compact('title', 'tennis_players', 'print'));
+    $links = [
+        [
+            'name' => 'Home',
+            'adress' => '/'
+        ],
+        [
+            'name' => 'About Us',
+            'adress' => '/about-us'
+        ]
+    ];
+
+    return view('home', compact('title', 'tennis_players', 'print', 'links'));
+});
+
+Route::get('/about-us', function (){
+
+    $title = 'Chi siamo';
+
+    $links = [
+        [
+            'name' => 'Home',
+            'adress' => '/'
+        ],
+        [
+            'name' => 'About Us',
+            'adress' => '/about-us'
+        ]
+    ];
+
+    return view('about-us', compact('title', 'links'));
 });
